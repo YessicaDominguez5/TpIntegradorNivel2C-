@@ -1,0 +1,11 @@
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\bin\Debug\Negocio.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\bin\Debug\Clases.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\bin\Debug\Clases.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\obj\Debug\Negocio.csproj.AssemblyReference.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\obj\Debug\Negocio.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\bin\Debug\accesoAdatos.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Negocio\bin\Debug\accesoAdatos.pdb

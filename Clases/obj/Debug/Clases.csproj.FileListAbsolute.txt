@@ -1,0 +1,6 @@
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\bin\Debug\Clases.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\bin\Debug\Clases.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\obj\Debug\Clases.csproj.AssemblyReference.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\obj\Debug\Clases.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\obj\Debug\Clases.pdb

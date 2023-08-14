@@ -1,0 +1,19 @@
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\Tp Integrador.exe.config
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\Tp Integrador.exe
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\Tp Integrador.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\Clases.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\Negocio.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\Clases.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\Negocio.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp Integrador.csproj.AssemblyReference.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp Integrador.csproj.SuggestedBindingRedirects.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp_Integrador.FormCatalogo.resources
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp_Integrador.Properties.Resources.resources
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp Integrador.csproj.GenerateResource.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp Integrador.csproj.CoreCompileInputs.cache
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp Integrador.csproj.CopyComplete
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp Integrador.exe
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp Integrador.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\accesoAdatos.dll
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\bin\Debug\accesoAdatos.pdb
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp_Integrador.frmAgregarModificar.resources
