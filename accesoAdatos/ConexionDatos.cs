@@ -52,6 +52,32 @@ namespace accesoAdatos
             }
 
         }
+        public void EjecutarAccion()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex; 
+            }
+
+
+
+        }
+        public void SetearParametros(string nombre, object valor)
+        {
+
+            comando.Parameters.AddWithValue(nombre, valor);
+
+            //para setear los valores del insert @IdMarca, @IdCategoria
+
+        }
 
         public void CerrarConexion()
         {

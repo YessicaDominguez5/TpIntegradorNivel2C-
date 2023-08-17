@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using clases;
 using System.Data.SqlClient;
 using accesoAdatos;
+using System.Net;
 
 namespace negocio
 {
@@ -35,7 +36,13 @@ namespace negocio
                     aux.CategoriaArticulo.DescripcionCategoria = (string)datos.Lector["DescripcionCategoria"];
                     aux.MarcaArticulo = new Marca();
                     aux.MarcaArticulo.DescripcionMarca = (string)datos.Lector["DescripcionMarca"];
+
+                    if (!(datos.Lector["ImagenUrl"]is DBNull)) //para que lo lea solo si no es Null
+                    {
                     aux.UrlImagenArticulo = (string)datos.Lector["ImagenUrl"];
+
+
+                    }
                     aux.PrecioArticulo = (decimal)datos.Lector["Precio"];
 
                     listaDeArticulos.Add(aux);
@@ -66,12 +73,25 @@ namespace negocio
 
             try
             {
+                datos.SetearConsulta("insert into ARTICULOS(Codigo, Nombre, Descripcion, IdMarca, IdCategoria, ImagenUrl, Precio) values('"+ nuevo.CodigoArticulo +"', '"+nuevo.NombreArticulo+"', '"+nuevo.DescripcionArticulo+"',@IdMarca, @IdCategoria, '"+nuevo.UrlImagenArticulo+"',"+nuevo.PrecioArticulo+")");
 
+                datos.SetearParametros("@IdMarca", nuevo.MarcaArticulo.IdMarca);
+                datos.SetearParametros("@IdCategoria", nuevo.CategoriaArticulo.IdCategoria);
+
+                //se tiene que ejecutar lectura pero como es un insert no se puede EjecutarLectura() entonces llama a EjecutarAccion();
+
+                datos.EjecutarAccion();
+                
             }
             catch (Exception ex)
             {
 
                 throw ex;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+
             }
 
 

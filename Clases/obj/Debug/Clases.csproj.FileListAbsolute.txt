@@ -4,3 +4,9 @@ C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\
 C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\obj\Debug\Clases.csproj.CoreCompileInputs.cache
 C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\obj\Debug\Clases.dll
 C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Clases\obj\Debug\Clases.pdb
+C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Clases\bin\Debug\Clases.dll
+C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Clases\bin\Debug\Clases.pdb
+C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Clases\obj\Debug\clases.csproj.AssemblyReference.cache
+C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Clases\obj\Debug\clases.csproj.CoreCompileInputs.cache
+C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Clases\obj\Debug\Clases.dll
+C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Clases\obj\Debug\Clases.pdb

@@ -23,13 +23,10 @@ namespace Tp_Integrador
 
         private void FormCatalogo_Load(object sender, EventArgs e)
         {
-            // Carga en el Load la lista en el Data Grid View
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            lista = negocio.Listar();
-            dgvListaArticulos.DataSource = lista;
-            dgvListaArticulos.Columns["UrlImagenArticulo"].Visible= false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
-            CargarImagen(lista[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
+            Cargar();
+
         }
+            
 
         private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
         {
@@ -60,6 +57,31 @@ namespace Tp_Integrador
         {
             frmAgregarModificar nuevoArticulo = new frmAgregarModificar();
             nuevoArticulo.ShowDialog();
+            Cargar();
         }
+
+            private void Cargar()
+            {
+                // Carga en el Load la lista en el Data Grid View
+                ArticuloNegocio negocio = new ArticuloNegocio();
+
+                try
+                {
+                    lista = negocio.Listar();
+                    dgvListaArticulos.DataSource = lista;
+                    dgvListaArticulos.Columns["UrlImagenArticulo"].Visible = false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
+                    CargarImagen(lista[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+
+
+        
     }
 }

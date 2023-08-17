@@ -41,8 +41,11 @@
             // dgvListaArticulos
             // 
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListaArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaArticulos.Location = new System.Drawing.Point(25, 55);
+            this.dgvListaArticulos.MultiSelect = false;
             this.dgvListaArticulos.Name = "dgvListaArticulos";
+            this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArticulos.Size = new System.Drawing.Size(541, 265);
             this.dgvListaArticulos.TabIndex = 0;
             this.dgvListaArticulos.SelectionChanged += new System.EventHandler(this.dgvListaArticulos_SelectionChanged);
@@ -68,8 +71,8 @@
             this.btnAgregar.Location = new System.Drawing.Point(25, 339);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(101, 29);
-            this.btnAgregar.TabIndex = 2;
-            this.btnAgregar.Text = "AGREGAR";
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "&AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -83,8 +86,8 @@
             this.btnModificar.Location = new System.Drawing.Point(168, 339);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(101, 29);
-            this.btnModificar.TabIndex = 3;
-            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "&MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = false;
             // 
             // btnEliminarFisico
@@ -97,8 +100,8 @@
             this.btnEliminarFisico.Location = new System.Drawing.Point(311, 339);
             this.btnEliminarFisico.Name = "btnEliminarFisico";
             this.btnEliminarFisico.Size = new System.Drawing.Size(101, 29);
-            this.btnEliminarFisico.TabIndex = 4;
-            this.btnEliminarFisico.Text = "ELIMINAR F";
+            this.btnEliminarFisico.TabIndex = 2;
+            this.btnEliminarFisico.Text = "ELIMINAR &F";
             this.btnEliminarFisico.UseVisualStyleBackColor = false;
             // 
             // btnEliminarLogico
@@ -111,8 +114,8 @@
             this.btnEliminarLogico.Location = new System.Drawing.Point(454, 339);
             this.btnEliminarLogico.Name = "btnEliminarLogico";
             this.btnEliminarLogico.Size = new System.Drawing.Size(101, 29);
-            this.btnEliminarLogico.TabIndex = 5;
-            this.btnEliminarLogico.Text = "ELIMINAR L";
+            this.btnEliminarLogico.TabIndex = 3;
+            this.btnEliminarLogico.Text = "ELIMINAR &L";
             this.btnEliminarLogico.UseVisualStyleBackColor = false;
             // 
             // FormCatalogo
