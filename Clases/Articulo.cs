@@ -37,6 +37,8 @@ namespace clases
         [DisplayName("     Precio   ")]
 
         public decimal PrecioArticulo { get; set; }
+
+        public bool Activo { get; set; }
     }
 }
 

@@ -34,6 +34,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminarFisico = new System.Windows.Forms.Button();
             this.btnEliminarLogico = new System.Windows.Forms.Button();
+            this.btnActivar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -83,7 +84,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("High Tower Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnModificar.Location = new System.Drawing.Point(168, 339);
+            this.btnModificar.Location = new System.Drawing.Point(163, 339);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(101, 29);
             this.btnModificar.TabIndex = 1;
@@ -98,12 +99,13 @@
             this.btnEliminarFisico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarFisico.Font = new System.Drawing.Font("High Tower Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarFisico.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnEliminarFisico.Location = new System.Drawing.Point(311, 339);
+            this.btnEliminarFisico.Location = new System.Drawing.Point(301, 339);
             this.btnEliminarFisico.Name = "btnEliminarFisico";
             this.btnEliminarFisico.Size = new System.Drawing.Size(101, 29);
             this.btnEliminarFisico.TabIndex = 2;
             this.btnEliminarFisico.Text = "ELIMINAR &F";
             this.btnEliminarFisico.UseVisualStyleBackColor = false;
+            this.btnEliminarFisico.Click += new System.EventHandler(this.btnEliminarFisico_Click);
             // 
             // btnEliminarLogico
             // 
@@ -112,12 +114,28 @@
             this.btnEliminarLogico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminarLogico.Font = new System.Drawing.Font("High Tower Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarLogico.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnEliminarLogico.Location = new System.Drawing.Point(454, 339);
+            this.btnEliminarLogico.Location = new System.Drawing.Point(439, 339);
             this.btnEliminarLogico.Name = "btnEliminarLogico";
             this.btnEliminarLogico.Size = new System.Drawing.Size(101, 29);
             this.btnEliminarLogico.TabIndex = 3;
             this.btnEliminarLogico.Text = "ELIMINAR &L";
             this.btnEliminarLogico.UseVisualStyleBackColor = false;
+            this.btnEliminarLogico.Click += new System.EventHandler(this.btnEliminarLogico_Click);
+            // 
+            // btnActivar
+            // 
+            this.btnActivar.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.btnActivar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivar.Font = new System.Drawing.Font("High Tower Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnActivar.Location = new System.Drawing.Point(577, 339);
+            this.btnActivar.Name = "btnActivar";
+            this.btnActivar.Size = new System.Drawing.Size(101, 29);
+            this.btnActivar.TabIndex = 4;
+            this.btnActivar.Text = " ACTIVA&R       ";
+            this.btnActivar.UseVisualStyleBackColor = false;
+            this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
             // 
             // FormCatalogo
             // 
@@ -125,6 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(885, 515);
+            this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.btnEliminarLogico);
             this.Controls.Add(this.btnEliminarFisico);
             this.Controls.Add(this.btnModificar);
@@ -150,6 +169,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminarFisico;
         private System.Windows.Forms.Button btnEliminarLogico;
+        private System.Windows.Forms.Button btnActivar;
     }
 }
 

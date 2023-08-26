@@ -75,7 +75,8 @@ namespace Tp_Integrador
                     dgvListaArticulos.Columns["UrlImagenArticulo"].Visible = false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
                     CargarImagen(lista[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
                
-                dgvListaArticulos.Columns["Id"].Visible = false;
+                    dgvListaArticulos.Columns["Id"].Visible = false;
+                    dgvListaArticulos.Columns["Activo"].Visible = false;
 
                 }
                 catch (Exception ex)
@@ -108,6 +109,71 @@ namespace Tp_Integrador
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnEliminarFisico_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+
+        private void btnEliminarLogico_Click(object sender, EventArgs e)
+        {
+            Eliminar(true);
+        }
+
+        private void Eliminar(bool logico = false) //EliminarFisico y EliminarLogico llaman a la funcion eliminar pasandole el id del item seleccionado, el = false hace que mandar el parametro sea opcional
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro que desea eliminar?", "Eliminando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+
+                    if(logico)
+                    {
+                        negocio.EliminarLogico(seleccionado.Id);
+
+                    }
+                    else
+                    {
+                    negocio.EliminarFisico(seleccionado.Id);
+
+                    }
+                    Cargar();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+
+        private void btnActivar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            List<Articulo> listaInactiva = negocio.ListarInactivos();
+
+            dgvListaArticulos.DataSource = listaInactiva;
+
+            dgvListaArticulos.Columns["UrlImagenArticulo"].Visible = false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
+            CargarImagen(listaInactiva[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
+
+            dgvListaArticulos.Columns["Id"].Visible = false;
+            dgvListaArticulos.Columns["Activo"].Visible = false;
+
+
+
+
         }
     }
 }
