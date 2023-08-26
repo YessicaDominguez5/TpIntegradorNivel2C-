@@ -20,7 +20,7 @@ namespace Tp_Integrador
         {
             InitializeComponent();
         }
-
+     
         private void FormCatalogo_Load(object sender, EventArgs e)
         {
             Cargar();
@@ -30,8 +30,11 @@ namespace Tp_Integrador
 
         private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem; //de la fila actual trae el objeto enlazado.
-            CargarImagen(seleccionado.UrlImagenArticulo); // trae la imagen del articulo seleccionado a la picture box.
+            if(dgvListaArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem; //de la fila actual trae el objeto enlazado.
+                CargarImagen(seleccionado.UrlImagenArticulo); // trae la imagen del articulo seleccionado a la picture box.
+            }
         }
 
         private void CargarImagen(string imagen)
@@ -71,6 +74,8 @@ namespace Tp_Integrador
                     dgvListaArticulos.DataSource = lista;
                     dgvListaArticulos.Columns["UrlImagenArticulo"].Visible = false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
                     CargarImagen(lista[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
+               
+                dgvListaArticulos.Columns["Id"].Visible = false;
 
                 }
                 catch (Exception ex)
@@ -80,8 +85,29 @@ namespace Tp_Integrador
                 }
             }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
 
+            try
+            {
+                if(dgvListaArticulos.CurrentRow is null) // Si no se seleccionó nada, pedimos y no cerramos el programa con el return.
+                {
+                    MessageBox.Show("Por favor selecciona un item");
+                    return;
+                }
+            seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
 
-        
+            frmAgregarModificar ArticuloAModificar = new frmAgregarModificar(seleccionado);
+            ArticuloAModificar.ShowDialog();
+            Cargar();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

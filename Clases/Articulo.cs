@@ -9,7 +9,11 @@ using System.Threading.Tasks;
 namespace clases
 {
     public class Articulo
+
     {
+        
+        public int Id{ get; set; }
+        
         [DisplayName("     Código   ")] //Nombre para las columnas, se le puede agregar tildes y espacios, va arriba de la property
         public string CodigoArticulo { get; set; }
 

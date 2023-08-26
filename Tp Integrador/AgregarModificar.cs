@@ -15,9 +15,17 @@ namespace Tp_Integrador
 {
     public partial class frmAgregarModificar : Form
     {
-        public frmAgregarModificar()
+        private Articulo _articulo = null;
+        public frmAgregarModificar()//constructor para agregar
         {
             InitializeComponent();
+        }
+        public frmAgregarModificar(Articulo articuloSeleccionado) //constructor para modificar
+        {
+            InitializeComponent();
+            _articulo = articuloSeleccionado; //al articulo de la línea 18 le asignamos el artículo seleccionado en el Modificar
+            Text = "Modificar Artículo";
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -28,21 +36,39 @@ namespace Tp_Integrador
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
+
             ArticuloNegocio negocio = new ArticuloNegocio(); 
 
             try
             {
-                articulo.CodigoArticulo = tBoxCodigo.Text;
-                articulo.NombreArticulo = tBoxNombre.Text;
-                articulo.DescripcionArticulo = tBoxDescripcion.Text;
-                articulo.UrlImagenArticulo = tBoxImagen.Text;
-                articulo.PrecioArticulo = decimal.Parse(tBoxPrecio.Text);
-                articulo.MarcaArticulo = (Marca)cBoxMarca.SelectedItem;
-                articulo.CategoriaArticulo = (Categoria)cBoxCategoria.SelectedItem;
+                    if(_articulo is null)
+                    {
+                       _articulo = new Articulo();
+                       //si el articulo está en null(o sea es Agregar)hay que crear un nuevo objeto, si está en modificar no
 
-                negocio.agregar(articulo); // envía el articulo a la función agregar de ArticuloNegocio.
+                    }
+                _articulo.CodigoArticulo = tBoxCodigo.Text;
+                _articulo.NombreArticulo = tBoxNombre.Text;
+                _articulo.DescripcionArticulo = tBoxDescripcion.Text;
+                _articulo.UrlImagenArticulo = tBoxImagen.Text;
+                _articulo.PrecioArticulo = decimal.Parse(tBoxPrecio.Text);
+                _articulo.MarcaArticulo = (Marca)cBoxMarca.SelectedItem;
+                _articulo.CategoriaArticulo = (Categoria)cBoxCategoria.SelectedItem;
+
+                if(_articulo.Id != 0)
+                {
+                    //si el Id no es 0 es porque estoy modificando
+
+                    negocio.modificar(_articulo);
+                    MessageBox.Show("Modificado exitosamente");
+                }
+                else
+                {
+                negocio.agregar(_articulo); // envía el articulo a la función agregar de ArticuloNegocio.
                 MessageBox.Show("Agregado exitosamente");
+                }
+
+               
                 Close();
 
             }
@@ -61,7 +87,30 @@ namespace Tp_Integrador
             try
             {
                 cBoxCategoria.DataSource = catNegocio.listar();
+                cBoxCategoria.ValueMember = "IdCategoria"; //clave para asignar un valor predeterminado en la línea 89
+                cBoxCategoria.DisplayMember = "DescripcionCategoria";//valor
+
                 cBoxMarca.DataSource= marNegocio.listar();
+                cBoxMarca.ValueMember = "IdMarca";
+                cBoxMarca.DisplayMember = "DescripcionMarca";
+
+
+                if (_articulo != null)//si es null es porque no paso por el agregar todavia, si es null es un articulo a modificar
+                {
+                    //se precarga el artículo en el modificar
+                    tBoxCodigo.Text = _articulo.CodigoArticulo.ToString();
+                    tBoxNombre.Text = _articulo.NombreArticulo;
+                    tBoxDescripcion.Text = _articulo.DescripcionArticulo;
+                    tBoxImagen.Text = _articulo.UrlImagenArticulo;
+                    CargarImagen(_articulo.UrlImagenArticulo);
+                    tBoxPrecio.Text = _articulo.PrecioArticulo.ToString();
+
+                    cBoxCategoria.SelectedValue = _articulo.CategoriaArticulo.IdCategoria;
+                    cBoxMarca.SelectedValue = _articulo.MarcaArticulo.IdMarca;
+
+
+
+                }
 
             }
             catch (Exception ex)
