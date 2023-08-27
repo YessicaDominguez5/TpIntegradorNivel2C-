@@ -181,10 +181,12 @@ namespace negocio
 
             try
             {
-                
-                
+                datos.SetearConsulta("update ARTICULOS set Activo = 1 where id = @id");
+                datos.SetearParametros("@id", id);
+                datos.EjecutarAccion();
 
-                
+
+
             }
             catch (Exception ex)
             {

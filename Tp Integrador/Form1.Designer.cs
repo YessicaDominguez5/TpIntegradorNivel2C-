@@ -35,6 +35,8 @@
             this.btnEliminarFisico = new System.Windows.Forms.Button();
             this.btnEliminarLogico = new System.Windows.Forms.Button();
             this.btnActivar = new System.Windows.Forms.Button();
+            this.btnActivarArticulo = new System.Windows.Forms.Button();
+            this.btnCancelarActivar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -137,12 +139,44 @@
             this.btnActivar.UseVisualStyleBackColor = false;
             this.btnActivar.Click += new System.EventHandler(this.btnActivar_Click);
             // 
+            // btnActivarArticulo
+            // 
+            this.btnActivarArticulo.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.btnActivarArticulo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActivarArticulo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivarArticulo.Font = new System.Drawing.Font("High Tower Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActivarArticulo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnActivarArticulo.Location = new System.Drawing.Point(104, 404);
+            this.btnActivarArticulo.Name = "btnActivarArticulo";
+            this.btnActivarArticulo.Size = new System.Drawing.Size(101, 29);
+            this.btnActivarArticulo.TabIndex = 5;
+            this.btnActivarArticulo.Text = "ACTIVAR";
+            this.btnActivarArticulo.UseVisualStyleBackColor = false;
+            this.btnActivarArticulo.Click += new System.EventHandler(this.btnActivarArticulo_Click);
+            // 
+            // btnCancelarActivar
+            // 
+            this.btnCancelarActivar.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.btnCancelarActivar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelarActivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarActivar.Font = new System.Drawing.Font("High Tower Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarActivar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnCancelarActivar.Location = new System.Drawing.Point(371, 404);
+            this.btnCancelarActivar.Name = "btnCancelarActivar";
+            this.btnCancelarActivar.Size = new System.Drawing.Size(101, 29);
+            this.btnCancelarActivar.TabIndex = 6;
+            this.btnCancelarActivar.Text = "CANCELAR";
+            this.btnCancelarActivar.UseVisualStyleBackColor = false;
+            this.btnCancelarActivar.Click += new System.EventHandler(this.btnCancelarActivar_Click);
+            // 
             // FormCatalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(885, 515);
+            this.Controls.Add(this.btnCancelarActivar);
+            this.Controls.Add(this.btnActivarArticulo);
             this.Controls.Add(this.btnActivar);
             this.Controls.Add(this.btnEliminarLogico);
             this.Controls.Add(this.btnEliminarFisico);
@@ -170,6 +204,8 @@
         private System.Windows.Forms.Button btnEliminarFisico;
         private System.Windows.Forms.Button btnEliminarLogico;
         private System.Windows.Forms.Button btnActivar;
+        private System.Windows.Forms.Button btnActivarArticulo;
+        private System.Windows.Forms.Button btnCancelarActivar;
     }
 }
 

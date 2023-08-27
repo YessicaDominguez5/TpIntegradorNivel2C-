@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,11 @@ namespace Tp_Integrador
                
                     dgvListaArticulos.Columns["Id"].Visible = false;
                     dgvListaArticulos.Columns["Activo"].Visible = false;
+
+                    btnActivarArticulo.Enabled = false;
+                    btnActivarArticulo.Visible = false;
+                    btnCancelarActivar.Enabled = false;
+                    btnCancelarActivar.Visible = false;
 
                 }
                 catch (Exception ex)
@@ -170,10 +176,75 @@ namespace Tp_Integrador
 
             dgvListaArticulos.Columns["Id"].Visible = false;
             dgvListaArticulos.Columns["Activo"].Visible = false;
+            
+            btnAgregar.Enabled = false;
+            btnAgregar.Visible = false;
+            btnModificar.Enabled = false;
+            btnModificar.Visible = false;
+            btnEliminarFisico.Enabled = false;
+            btnEliminarFisico.Visible = false;
+            btnEliminarLogico.Enabled = false;
+            btnEliminarLogico.Visible = false;
+            btnActivar.Enabled = false;
+            btnActivar.Visible = false;
 
-
+            btnActivarArticulo.Enabled = true;
+            btnActivarArticulo.Visible = true;
+            btnCancelarActivar.Enabled = true;
+            btnCancelarActivar.Visible = true;
 
 
         }
+
+        private void btnCancelarActivar_Click(object sender, EventArgs e)
+        {
+            Cargar();
+            MostrarBotones();
+
+            
+        }
+
+        private void btnActivarArticulo_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            Articulo seleccionado;
+
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Está seguro que desea Activar el artículo?", "Activando...", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                    negocio.Activar(seleccionado.Id);
+
+                    
+                    Cargar();
+                    MostrarBotones();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+            private void MostrarBotones()
+            {
+                btnAgregar.Enabled = true;
+                btnAgregar.Visible = true;
+                btnModificar.Enabled = true;
+                btnModificar.Visible = true;
+                btnEliminarFisico.Enabled = true;
+                btnEliminarFisico.Visible = true;
+                btnEliminarLogico.Enabled = true;
+                btnEliminarLogico.Visible = true;
+                btnActivar.Enabled = true;
+                btnActivar.Visible = true;
+
+
+            }
     }
 }
