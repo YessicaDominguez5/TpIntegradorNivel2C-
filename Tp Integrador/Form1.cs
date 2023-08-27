@@ -73,11 +73,8 @@ namespace Tp_Integrador
                 {
                     lista = negocio.Listar();
                     dgvListaArticulos.DataSource = lista;
-                    dgvListaArticulos.Columns["UrlImagenArticulo"].Visible = false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
                     CargarImagen(lista[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
-               
-                    dgvListaArticulos.Columns["Id"].Visible = false;
-                    dgvListaArticulos.Columns["Activo"].Visible = false;
+                    OcultarColumnas();
 
                     btnActivarArticulo.Enabled = false;
                     btnActivarArticulo.Visible = false;
@@ -171,22 +168,10 @@ namespace Tp_Integrador
 
             dgvListaArticulos.DataSource = listaInactiva;
 
-            dgvListaArticulos.Columns["UrlImagenArticulo"].Visible = false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
             CargarImagen(listaInactiva[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
+            OcultarColumnas();
 
-            dgvListaArticulos.Columns["Id"].Visible = false;
-            dgvListaArticulos.Columns["Activo"].Visible = false;
-            
-            btnAgregar.Enabled = false;
-            btnAgregar.Visible = false;
-            btnModificar.Enabled = false;
-            btnModificar.Visible = false;
-            btnEliminarFisico.Enabled = false;
-            btnEliminarFisico.Visible = false;
-            btnEliminarLogico.Enabled = false;
-            btnEliminarLogico.Visible = false;
-            btnActivar.Enabled = false;
-            btnActivar.Visible = false;
+            MostrarBotones(false);
 
             btnActivarArticulo.Enabled = true;
             btnActivarArticulo.Visible = true;
@@ -199,7 +184,7 @@ namespace Tp_Integrador
         private void btnCancelarActivar_Click(object sender, EventArgs e)
         {
             Cargar();
-            MostrarBotones();
+            MostrarBotones(true);
 
             
         }
@@ -219,7 +204,7 @@ namespace Tp_Integrador
 
                     
                     Cargar();
-                    MostrarBotones();
+                    MostrarBotones(true);
 
                 }
 
@@ -231,20 +216,64 @@ namespace Tp_Integrador
             }
 
         }
-            private void MostrarBotones()
+            private void MostrarBotones(bool mostrar)
             {
-                btnAgregar.Enabled = true;
-                btnAgregar.Visible = true;
-                btnModificar.Enabled = true;
-                btnModificar.Visible = true;
-                btnEliminarFisico.Enabled = true;
-                btnEliminarFisico.Visible = true;
-                btnEliminarLogico.Enabled = true;
-                btnEliminarLogico.Visible = true;
-                btnActivar.Enabled = true;
-                btnActivar.Visible = true;
+                btnAgregar.Enabled = mostrar;
+                btnAgregar.Visible = mostrar;
+                btnModificar.Enabled = mostrar  ;
+                btnModificar.Visible = mostrar  ;
+                btnEliminarFisico.Enabled = mostrar ;
+                btnEliminarFisico.Visible = mostrar;       
+                btnEliminarLogico.Enabled = mostrar;
+                btnEliminarLogico.Visible = mostrar;
+                btnActivar.Enabled = mostrar;
+                btnActivar.Visible = mostrar;
 
 
             }
+
+        private void btnFiltroSimple_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void OcultarColumnas()
+        {
+
+            dgvListaArticulos.Columns["UrlImagenArticulo"].Visible = false;  //para que no se vea la columna de url (con el nombre de la clase Articulo).
+            dgvListaArticulos.Columns["Id"].Visible = false;
+            dgvListaArticulos.Columns["Activo"].Visible = false;
+
+
+
+        }
+
+        private void tBoxFiltroSimple_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+            string filtro = tBoxFiltroSimple.Text;
+
+            if (filtro.Length >= 3)
+            {
+
+                listaFiltrada = lista.FindAll(x => x.NombreArticulo.ToUpper().Contains(filtro.ToUpper()) || x.CategoriaArticulo.DescripcionCategoria.ToUpper().Contains(filtro.ToUpper()) || x.MarcaArticulo.DescripcionMarca.ToUpper().Contains(filtro.ToUpper()));//Donde el nombre del Articulo contiene lo que esta en el TextBox, encontrar todos esos
+                MostrarBotones(false);
+
+
+
+            }
+            else
+            {
+                listaFiltrada = lista;
+                MostrarBotones(true);
+
+            }
+
+            //se limpia y se guarda listaFiltrada
+            dgvListaArticulos.DataSource = null;
+            dgvListaArticulos.DataSource = listaFiltrada;
+            OcultarColumnas();
+
+        }
     }
 }
