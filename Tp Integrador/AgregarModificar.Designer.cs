@@ -45,6 +45,7 @@
             this.cBoxMarca = new System.Windows.Forms.ComboBox();
             this.cBoxCategoria = new System.Windows.Forms.ComboBox();
             this.pBoxArticulo = new System.Windows.Forms.PictureBox();
+            this.btnAgregarImagen = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,12 +212,23 @@
             this.pBoxArticulo.TabIndex = 16;
             this.pBoxArticulo.TabStop = false;
             // 
+            // btnAgregarImagen
+            // 
+            this.btnAgregarImagen.Location = new System.Drawing.Point(476, 153);
+            this.btnAgregarImagen.Name = "btnAgregarImagen";
+            this.btnAgregarImagen.Size = new System.Drawing.Size(29, 20);
+            this.btnAgregarImagen.TabIndex = 17;
+            this.btnAgregarImagen.Text = "+";
+            this.btnAgregarImagen.UseVisualStyleBackColor = true;
+            this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
+            // 
             // frmAgregarModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pBoxArticulo);
             this.Controls.Add(this.cBoxCategoria);
             this.Controls.Add(this.cBoxMarca);
@@ -263,5 +275,6 @@
         private System.Windows.Forms.ComboBox cBoxMarca;
         private System.Windows.Forms.ComboBox cBoxCategoria;
         private System.Windows.Forms.PictureBox pBoxArticulo;
+        private System.Windows.Forms.Button btnAgregarImagen;
     }
 }

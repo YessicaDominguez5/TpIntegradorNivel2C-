@@ -21,17 +21,21 @@ namespace Tp_Integrador
         {
             InitializeComponent();
         }
-     
+
         private void FormCatalogo_Load(object sender, EventArgs e)
         {
             Cargar();
+            cBoxCampo.Items.Add("Artículo");
+            cBoxCampo.Items.Add("Marca");
+            cBoxCampo.Items.Add("Precio");
+
 
         }
-            
+
 
         private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvListaArticulos.CurrentRow != null)
+            if (dgvListaArticulos.CurrentRow != null)
             {
                 Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem; //de la fila actual trae el objeto enlazado.
                 CargarImagen(seleccionado.UrlImagenArticulo); // trae la imagen del articulo seleccionado a la picture box.
@@ -43,9 +47,9 @@ namespace Tp_Integrador
             try
             {
 
-            pBoxArticulo.Load(imagen);
+                pBoxArticulo.Load(imagen);
 
-            //función para cargar la imagen del Picture Box durante el Load.
+                //función para cargar la imagen del Picture Box durante el Load.
             }
             catch (Exception)
             {
@@ -64,30 +68,30 @@ namespace Tp_Integrador
             Cargar();
         }
 
-            private void Cargar()
+        private void Cargar()
+        {
+            // Carga en el Load la lista en el Data Grid View
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
             {
-                // Carga en el Load la lista en el Data Grid View
-                ArticuloNegocio negocio = new ArticuloNegocio();
+                lista = negocio.Listar();
+                dgvListaArticulos.DataSource = lista;
+                CargarImagen(lista[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
+                OcultarColumnas();
 
-                try
-                {
-                    lista = negocio.Listar();
-                    dgvListaArticulos.DataSource = lista;
-                    CargarImagen(lista[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
-                    OcultarColumnas();
+                btnActivarArticulo.Enabled = false;
+                btnActivarArticulo.Visible = false;
+                btnCancelarActivar.Enabled = false;
+                btnCancelarActivar.Visible = false;
 
-                    btnActivarArticulo.Enabled = false;
-                    btnActivarArticulo.Visible = false;
-                    btnCancelarActivar.Enabled = false;
-                    btnCancelarActivar.Visible = false;
-
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show(ex.ToString());
-                }
             }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
@@ -95,16 +99,16 @@ namespace Tp_Integrador
 
             try
             {
-                if(dgvListaArticulos.CurrentRow is null) // Si no se seleccionó nada, pedimos y no cerramos el programa con el return.
+                if (dgvListaArticulos.CurrentRow is null) // Si no se seleccionó nada, pedimos y no cerramos el programa con el return.
                 {
                     MessageBox.Show("Por favor selecciona un item");
                     return;
                 }
-            seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
 
-            frmAgregarModificar ArticuloAModificar = new frmAgregarModificar(seleccionado);
-            ArticuloAModificar.ShowDialog();
-            Cargar();
+                frmAgregarModificar ArticuloAModificar = new frmAgregarModificar(seleccionado);
+                ArticuloAModificar.ShowDialog();
+                Cargar();
 
             }
             catch (Exception ex)
@@ -136,14 +140,14 @@ namespace Tp_Integrador
                 {
                     seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
 
-                    if(logico)
+                    if (logico)
                     {
                         negocio.EliminarLogico(seleccionado.Id);
 
                     }
                     else
                     {
-                    negocio.EliminarFisico(seleccionado.Id);
+                        negocio.EliminarFisico(seleccionado.Id);
 
                     }
                     Cargar();
@@ -186,7 +190,7 @@ namespace Tp_Integrador
             Cargar();
             MostrarBotones(true);
 
-            
+
         }
 
         private void btnActivarArticulo_Click(object sender, EventArgs e)
@@ -202,7 +206,7 @@ namespace Tp_Integrador
                     seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
                     negocio.Activar(seleccionado.Id);
 
-                    
+
                     Cargar();
                     MostrarBotones(true);
 
@@ -216,26 +220,22 @@ namespace Tp_Integrador
             }
 
         }
-            private void MostrarBotones(bool mostrar)
-            {
-                btnAgregar.Enabled = mostrar;
-                btnAgregar.Visible = mostrar;
-                btnModificar.Enabled = mostrar  ;
-                btnModificar.Visible = mostrar  ;
-                btnEliminarFisico.Enabled = mostrar ;
-                btnEliminarFisico.Visible = mostrar;       
-                btnEliminarLogico.Enabled = mostrar;
-                btnEliminarLogico.Visible = mostrar;
-                btnActivar.Enabled = mostrar;
-                btnActivar.Visible = mostrar;
-
-
-            }
-
-        private void btnFiltroSimple_Click(object sender, EventArgs e)
+        private void MostrarBotones(bool mostrar)
         {
-          
+            btnAgregar.Enabled = mostrar;
+            btnAgregar.Visible = mostrar;
+            btnModificar.Enabled = mostrar;
+            btnModificar.Visible = mostrar;
+            btnEliminarFisico.Enabled = mostrar;
+            btnEliminarFisico.Visible = mostrar;
+            btnEliminarLogico.Enabled = mostrar;
+            btnEliminarLogico.Visible = mostrar;
+            btnActivar.Enabled = mostrar;
+            btnActivar.Visible = mostrar;
+
+
         }
+
 
         private void OcultarColumnas()
         {
@@ -274,6 +274,106 @@ namespace Tp_Integrador
             dgvListaArticulos.DataSource = listaFiltrada;
             OcultarColumnas();
 
+        }
+
+        private void cBoxCampo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string opcion = cBoxCampo.SelectedItem.ToString();
+
+            if (opcion == "Precio")
+            {
+                cBoxCriterio.Items.Clear();
+                cBoxCriterio.Items.Add("Mayor a...");
+                cBoxCriterio.Items.Add("Menor a...");
+                cBoxCriterio.Items.Add("Igual a...");
+
+            }
+            else
+            {
+                cBoxCriterio.Items.Clear();
+                cBoxCriterio.Items.Add("Comienza con...");
+                cBoxCriterio.Items.Add("Termina con...");
+                cBoxCriterio.Items.Add("Contiene...");
+
+            }
+        }
+
+        private void btnFiltroAvanzado_Click(object sender, EventArgs e)
+        {
+
+            ArticuloNegocio negocio = new ArticuloNegocio();
+
+            try
+            {
+                if (validarFiltro())
+                {
+
+                    return;
+                }
+                string campo = cBoxCampo.SelectedItem.ToString();
+                string criterio = cBoxCriterio.SelectedItem.ToString();
+                string filtro = tBoxFiltroAvanzado.Text;
+                dgvListaArticulos.DataSource = negocio.filtrarAvanzado(campo, criterio, filtro);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private bool validarFiltro()
+        {
+            if (cBoxCampo.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el campo");
+                return true;
+
+            }
+            if (cBoxCriterio.SelectedIndex < 0)
+            {
+                MessageBox.Show("Por favor, seleccione el criterio");
+                return true;
+
+            }
+            if(cBoxCampo.SelectedItem.ToString() == "Precio")
+            {
+                if(string.IsNullOrEmpty(tBoxFiltroAvanzado.Text))
+                {
+                    MessageBox.Show("Atención!Se debe cargar el filtro primero");
+                    return true;
+
+                }
+                if(!(soloNumeros(tBoxFiltroAvanzado.Text)))
+                {
+                    MessageBox.Show("Ingresar solo números por favor");
+                    return true;
+
+                }
+
+            }
+
+            return false;
+
+
+        }
+        private bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if(!(char.IsNumber(caracter)))
+                {
+                    return false; //si no es Número retorna falso a validarFiltro
+                }
+            }
+
+                return true;
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            Cargar();
         }
     }
 }
