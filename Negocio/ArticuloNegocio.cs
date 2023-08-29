@@ -324,5 +324,18 @@ namespace negocio
             return lista;
 
         }
+        public bool soloNumeros(string cadena)
+        {
+            foreach (char caracter in cadena)
+            {
+                if (!(char.IsNumber(caracter)) && caracter != '.' && caracter != ',')
+                {
+                    return false; //si no es Número retorna falso a validarFiltro
+                }
+            }
+
+            return true;
+
+        }
     }
 }

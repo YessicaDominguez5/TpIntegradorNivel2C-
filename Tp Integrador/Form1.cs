@@ -324,6 +324,7 @@ namespace Tp_Integrador
         }
         private bool validarFiltro()
         {
+            ArticuloNegocio negocio = new ArticuloNegocio();
             if (cBoxCampo.SelectedIndex < 0)
             {
                 MessageBox.Show("Por favor, seleccione el campo");
@@ -344,7 +345,7 @@ namespace Tp_Integrador
                     return true;
 
                 }
-                if(!(soloNumeros(tBoxFiltroAvanzado.Text)))
+                if(!(negocio.soloNumeros(tBoxFiltroAvanzado.Text)))
                 {
                     MessageBox.Show("Ingresar solo números por favor");
                     return true;
@@ -357,19 +358,7 @@ namespace Tp_Integrador
 
 
         }
-        private bool soloNumeros(string cadena)
-        {
-            foreach (char caracter in cadena)
-            {
-                if(!(char.IsNumber(caracter)))
-                {
-                    return false; //si no es Número retorna falso a validarFiltro
-                }
-            }
-
-                return true;
-
-        }
+      
 
         private void btnVolver_Click(object sender, EventArgs e)
         {

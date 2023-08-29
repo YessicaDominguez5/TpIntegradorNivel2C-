@@ -50,40 +50,40 @@ namespace Tp_Integrador
                     //si el articulo está en null(o sea es Agregar)hay que crear un nuevo objeto, si está en modificar no
 
                 }
-                _articulo.CodigoArticulo = tBoxCodigo.Text;
-                _articulo.NombreArticulo = tBoxNombre.Text;
-                _articulo.DescripcionArticulo = tBoxDescripcion.Text;
-                _articulo.UrlImagenArticulo = tBoxImagen.Text;
-                if (!string.IsNullOrEmpty(tBoxPrecio.Text))
-                {
+                
+                if (ValidarFormulario() == true)
+                { 
+                    _articulo.CodigoArticulo = tBoxCodigo.Text;
+                    _articulo.NombreArticulo = tBoxNombre.Text;
+                    _articulo.DescripcionArticulo = tBoxDescripcion.Text;
+                    _articulo.UrlImagenArticulo = tBoxImagen.Text;
                     _articulo.PrecioArticulo = decimal.Parse(tBoxPrecio.Text);
-                }
-                else
-                {
-                    _articulo.PrecioArticulo = 0;
-                }
-                _articulo.MarcaArticulo = (Marca)cBoxMarca.SelectedItem;
-                _articulo.CategoriaArticulo = (Categoria)cBoxCategoria.SelectedItem;
+                    _articulo.MarcaArticulo = (Marca)cBoxMarca.SelectedItem;
+                    _articulo.CategoriaArticulo = (Categoria)cBoxCategoria.SelectedItem;
 
-                if (_articulo.Id != 0)
-                {
-                    //si el Id no es 0 es porque estoy modificando
+                    if (_articulo.Id != 0)
+                    {
+                        //si el Id no es 0 es porque estoy modificando
 
-                    negocio.modificar(_articulo);
-                    MessageBox.Show("Modificado exitosamente");
-                }
-                else
-                {
-                    negocio.agregar(_articulo); // envía el articulo a la función agregar de ArticuloNegocio.
-                    MessageBox.Show("Agregado exitosamente");
-                }
-                if (archivo != null && !(tBoxImagen.Text.ToUpper().Contains("HTTP")))
-                {
-                    File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);
+                        negocio.modificar(_articulo);
+                        MessageBox.Show("Modificado exitosamente");
+                    }
+                    else
+                    {
+                        negocio.agregar(_articulo); // envía el articulo a la función agregar de ArticuloNegocio.
+                        MessageBox.Show("Agregado exitosamente");
+                    }
+                    if (archivo != null && !(tBoxImagen.Text.ToUpper().Contains("HTTP")))
+                    {
+                        File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);
 
+                    }
+
+                    Close();
+                
                 }
 
-                Close();
+                
 
             }
             catch (Exception ex)
@@ -111,6 +111,7 @@ namespace Tp_Integrador
 
                 if (_articulo != null)//si es null es porque no paso por el agregar todavia, si es null es un articulo a modificar
                 {
+
                     //se precarga el artículo en el modificar
                     tBoxCodigo.Text = _articulo.CodigoArticulo.ToString();
                     tBoxNombre.Text = _articulo.NombreArticulo;
@@ -172,6 +173,126 @@ namespace Tp_Integrador
                 tBoxImagen.Text = archivo.FileName;
                 CargarImagen(archivo.FileName);
 
+            }
+        }
+
+     
+
+        private void tBoxCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tBoxCodigo.Text))
+            {
+                tBoxCodigo.BackColor = Color.Red;
+            }
+            else
+            {
+                tBoxCodigo.BackColor = Color.White;
+            }
+        }
+
+        private void tBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(tBoxNombre.Text))
+            {
+                tBoxNombre.BackColor = Color.Red;
+            }
+            else
+            {
+                tBoxNombre.BackColor = Color.White;
+            }
+        }
+
+        private void tBoxPrecio_TextChanged(object sender, EventArgs e)
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            if (string.IsNullOrEmpty(tBoxPrecio.Text))
+            {
+                tBoxPrecio.BackColor = Color.Red;
+             
+            }
+            else
+            {
+                tBoxPrecio.BackColor = Color.White;
+            }
+            if(!(negocio.soloNumeros(tBoxPrecio.Text)))
+            {
+                tBoxPrecio.BackColor = Color.Red;
+
+
+            }
+            else
+            {
+                tBoxPrecio.BackColor = Color.White;
+
+            }
+            
+        }
+
+
+
+        private bool ValidarFormulario()
+        {
+            bool validar = true;
+
+            if (string.IsNullOrEmpty(tBoxCodigo.Text))
+            {
+                tBoxCodigo.BackColor = Color.Red;
+
+                validar = false;
+            }
+            if (string.IsNullOrEmpty(tBoxNombre.Text))
+            {
+                tBoxNombre.BackColor = Color.Red;
+                validar = false;
+            }
+            if (string.IsNullOrEmpty(tBoxPrecio.Text))
+            {
+                tBoxPrecio.BackColor = Color.Red;
+
+                validar = false;
+
+            }
+            if(cBoxMarca.SelectedItem == null)
+            {
+                labelMarcaIncorrecta.Visible = true;
+
+                validar = false;
+            }
+            else
+            {
+                labelMarcaIncorrecta.Visible = false;
+                
+            }
+            if(cBoxCategoria.SelectedItem == null)
+            {
+                 labelCategoriaIncorrecta.Visible = true;
+                validar = false;
+            }
+            else
+            {
+                labelCategoriaIncorrecta.Visible = false;
+                
+            }
+
+
+
+
+            return validar;
+        }
+
+        private void cBoxMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cBoxMarca.SelectedItem != null)
+            {
+                labelMarcaIncorrecta.Visible = false;
+            }
+        }
+
+        private void cBoxCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cBoxCategoria.SelectedItem != null)
+            {
+                labelCategoriaIncorrecta.Visible = false;
             }
         }
     }

@@ -46,6 +46,8 @@
             this.cBoxCategoria = new System.Windows.Forms.ComboBox();
             this.pBoxArticulo = new System.Windows.Forms.PictureBox();
             this.btnAgregarImagen = new System.Windows.Forms.Button();
+            this.labelMarcaIncorrecta = new System.Windows.Forms.Label();
+            this.labelCategoriaIncorrecta = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,6 +127,7 @@
             this.tBoxCodigo.Name = "tBoxCodigo";
             this.tBoxCodigo.Size = new System.Drawing.Size(243, 20);
             this.tBoxCodigo.TabIndex = 0;
+            this.tBoxCodigo.TextChanged += new System.EventHandler(this.tBoxCodigo_TextChanged);
             // 
             // tBoxNombre
             // 
@@ -132,6 +135,7 @@
             this.tBoxNombre.Name = "tBoxNombre";
             this.tBoxNombre.Size = new System.Drawing.Size(243, 20);
             this.tBoxNombre.TabIndex = 1;
+            this.tBoxNombre.TextChanged += new System.EventHandler(this.tBoxNombre_TextChanged);
             // 
             // tBoxDescripcion
             // 
@@ -154,6 +158,7 @@
             this.tBoxPrecio.Name = "tBoxPrecio";
             this.tBoxPrecio.Size = new System.Drawing.Size(243, 20);
             this.tBoxPrecio.TabIndex = 4;
+            this.tBoxPrecio.TextChanged += new System.EventHandler(this.tBoxPrecio_TextChanged);
             // 
             // btnAceptar
             // 
@@ -193,6 +198,7 @@
             this.cBoxMarca.Name = "cBoxMarca";
             this.cBoxMarca.Size = new System.Drawing.Size(243, 21);
             this.cBoxMarca.TabIndex = 5;
+            this.cBoxMarca.SelectedIndexChanged += new System.EventHandler(this.cBoxMarca_SelectedIndexChanged);
             // 
             // cBoxCategoria
             // 
@@ -202,6 +208,7 @@
             this.cBoxCategoria.Name = "cBoxCategoria";
             this.cBoxCategoria.Size = new System.Drawing.Size(243, 21);
             this.cBoxCategoria.TabIndex = 6;
+            this.cBoxCategoria.SelectedIndexChanged += new System.EventHandler(this.cBoxCategoria_SelectedIndexChanged);
             // 
             // pBoxArticulo
             // 
@@ -222,12 +229,40 @@
             this.btnAgregarImagen.UseVisualStyleBackColor = true;
             this.btnAgregarImagen.Click += new System.EventHandler(this.btnAgregarImagen_Click);
             // 
+            // labelMarcaIncorrecta
+            // 
+            this.labelMarcaIncorrecta.AutoSize = true;
+            this.labelMarcaIncorrecta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.labelMarcaIncorrecta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMarcaIncorrecta.ForeColor = System.Drawing.Color.Red;
+            this.labelMarcaIncorrecta.Location = new System.Drawing.Point(470, 255);
+            this.labelMarcaIncorrecta.Name = "labelMarcaIncorrecta";
+            this.labelMarcaIncorrecta.Size = new System.Drawing.Size(15, 18);
+            this.labelMarcaIncorrecta.TabIndex = 18;
+            this.labelMarcaIncorrecta.Text = "*";
+            this.labelMarcaIncorrecta.Visible = false;
+            // 
+            // labelCategoriaIncorrecta
+            // 
+            this.labelCategoriaIncorrecta.AutoSize = true;
+            this.labelCategoriaIncorrecta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.labelCategoriaIncorrecta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCategoriaIncorrecta.ForeColor = System.Drawing.Color.Red;
+            this.labelCategoriaIncorrecta.Location = new System.Drawing.Point(470, 316);
+            this.labelCategoriaIncorrecta.Name = "labelCategoriaIncorrecta";
+            this.labelCategoriaIncorrecta.Size = new System.Drawing.Size(15, 18);
+            this.labelCategoriaIncorrecta.TabIndex = 19;
+            this.labelCategoriaIncorrecta.Text = "*";
+            this.labelCategoriaIncorrecta.Visible = false;
+            // 
             // frmAgregarModificar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelCategoriaIncorrecta);
+            this.Controls.Add(this.labelMarcaIncorrecta);
             this.Controls.Add(this.btnAgregarImagen);
             this.Controls.Add(this.pBoxArticulo);
             this.Controls.Add(this.cBoxCategoria);
@@ -276,5 +311,7 @@
         private System.Windows.Forms.ComboBox cBoxCategoria;
         private System.Windows.Forms.PictureBox pBoxArticulo;
         private System.Windows.Forms.Button btnAgregarImagen;
+        private System.Windows.Forms.Label labelMarcaIncorrecta;
+        private System.Windows.Forms.Label labelCategoriaIncorrecta;
     }
 }
