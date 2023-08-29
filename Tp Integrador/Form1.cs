@@ -170,6 +170,9 @@ namespace Tp_Integrador
 
             List<Articulo> listaInactiva = negocio.ListarInactivos();
 
+            if(listaInactiva.Count > 0)
+            {
+
             dgvListaArticulos.DataSource = listaInactiva;
 
             CargarImagen(listaInactiva[0].UrlImagenArticulo); //Trae la imagen del primer objeto de la lista.
@@ -181,6 +184,13 @@ namespace Tp_Integrador
             btnActivarArticulo.Visible = true;
             btnCancelarActivar.Enabled = true;
             btnCancelarActivar.Visible = true;
+
+            }
+            else
+            {
+                MessageBox.Show("No hay registros inactivos");
+            
+            }
 
 
         }
@@ -363,6 +373,21 @@ namespace Tp_Integrador
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Cargar();
+        }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            if (dgvListaArticulos.CurrentRow != null)
+            {
+                Articulo art = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
+                FormVerDetalle VerDetalle = new FormVerDetalle(art);
+
+                VerDetalle.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Marque el artículo primero");
+            }
         }
     }
 }
