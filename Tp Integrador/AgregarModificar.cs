@@ -233,6 +233,7 @@ namespace Tp_Integrador
         private bool ValidarFormulario()
         {
             bool validar = true;
+            ArticuloNegocio negocio = new ArticuloNegocio();
 
             if (string.IsNullOrEmpty(tBoxCodigo.Text))
             {
@@ -249,6 +250,11 @@ namespace Tp_Integrador
             {
                 tBoxPrecio.BackColor = Color.Red;
 
+                validar = false;
+                
+            }
+            if(!negocio.soloNumeros(tBoxPrecio.Text))
+            {
                 validar = false;
 
             }
