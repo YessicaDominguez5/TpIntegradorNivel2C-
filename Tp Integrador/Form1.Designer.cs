@@ -290,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1042, 622);
+            this.ClientSize = new System.Drawing.Size(1084, 675);
             this.Controls.Add(this.btnVerDetalle);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tBoxFiltroAvanzado);
@@ -312,6 +312,8 @@
             this.Controls.Add(this.pBoxArticulo);
             this.Controls.Add(this.dgvListaArticulos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximumSize = new System.Drawing.Size(1104, 718);
+            this.MinimumSize = new System.Drawing.Size(1104, 718);
             this.Name = "FormCatalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catálogo";

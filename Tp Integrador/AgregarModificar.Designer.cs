@@ -281,6 +281,8 @@
             this.Controls.Add(this.labelDescripcionArticulo);
             this.Controls.Add(this.labelNombreArticulo);
             this.Controls.Add(this.labelCodigoArticulo);
+            this.MaximumSize = new System.Drawing.Size(816, 489);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "frmAgregarModificar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Artículo";

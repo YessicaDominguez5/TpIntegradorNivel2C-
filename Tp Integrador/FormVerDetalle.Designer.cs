@@ -167,7 +167,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(667, 491);
+            this.ClientSize = new System.Drawing.Size(657, 493);
             this.Controls.Add(this.labelDetallePrecioLit);
             this.Controls.Add(this.labelDetalleMarcaLit);
             this.Controls.Add(this.labelDetalleCategoriaLit);
@@ -181,7 +181,11 @@
             this.Controls.Add(this.labelDetalleCodigo);
             this.Controls.Add(this.labelDetalleNombre);
             this.ForeColor = System.Drawing.Color.Snow;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(673, 532);
+            this.MinimumSize = new System.Drawing.Size(673, 532);
             this.Name = "FormVerDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Detalle";
             ((System.ComponentModel.ISupportInitialize)(this.pBoxVerDetalle)).EndInit();
             this.ResumeLayout(false);
