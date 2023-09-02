@@ -218,6 +218,7 @@
             this.pBoxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pBoxArticulo.TabIndex = 16;
             this.pBoxArticulo.TabStop = false;
+           
             // 
             // btnAgregarImagen
             // 

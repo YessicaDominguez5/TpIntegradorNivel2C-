@@ -182,6 +182,7 @@
             this.Controls.Add(this.labelDetalleNombre);
             this.ForeColor = System.Drawing.Color.Snow;
             this.Name = "FormVerDetalle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ver Detalle";
             ((System.ComponentModel.ISupportInitialize)(this.pBoxVerDetalle)).EndInit();
             this.ResumeLayout(false);

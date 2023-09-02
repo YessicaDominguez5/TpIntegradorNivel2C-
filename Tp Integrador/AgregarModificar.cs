@@ -73,7 +73,7 @@ namespace Tp_Integrador
                         negocio.agregar(_articulo); // envía el articulo a la función agregar de ArticuloNegocio.
                         MessageBox.Show("Agregado exitosamente");
                     }
-                    if (archivo != null && !(tBoxImagen.Text.ToUpper().Contains("HTTP")))
+                    if (archivo != null && !(tBoxImagen.Text.ToUpper().Contains("HTTP")) && !File.Exists(ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName))
                     {
                         File.Copy(archivo.FileName, ConfigurationManager.AppSettings["Articulos-App"] + archivo.SafeFileName);
 
@@ -301,5 +301,7 @@ namespace Tp_Integrador
                 labelCategoriaIncorrecta.Visible = false;
             }
         }
+
+       
     }
 }
