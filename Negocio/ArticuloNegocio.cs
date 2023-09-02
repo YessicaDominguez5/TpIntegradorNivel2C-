@@ -288,7 +288,7 @@ namespace negocio
             catch (Exception ex)
             {
 
-                throw ex;
+               throw ex;
             }
         }
 
@@ -326,11 +326,23 @@ namespace negocio
         }
         public bool soloNumeros(string cadena)
         {
+            int cont = 0;
+
             foreach (char caracter in cadena)
-            {
-                if (!(char.IsNumber(caracter)) && caracter != '.' && caracter != ',')
+            { 
+                if(caracter == '.')
+                {
+                    cont++;
+                }
+
+                if (!(char.IsNumber(caracter)) && caracter != '.')
                 {
                     return false; //si no es Número retorna falso a validarFiltro
+                }
+                
+                if(cont >= 2)
+                {
+                    return false;
                 }
             }
 

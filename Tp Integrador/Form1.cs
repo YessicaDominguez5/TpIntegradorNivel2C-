@@ -389,5 +389,7 @@ namespace Tp_Integrador
                 MessageBox.Show("Marque el artículo primero");
             }
         }
+
+        
     }
 }

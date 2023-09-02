@@ -37,3 +37,4 @@ C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Tp In
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp Integrador.exe
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp Integrador.pdb
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp_Integrador.FormVerDetalle.resources
+C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp_Integrador.FormVerDetalle.resources
