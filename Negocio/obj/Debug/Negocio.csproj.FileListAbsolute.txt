@@ -20,3 +20,16 @@ C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Negoc
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Negocio\obj\Debug\negocio.csproj.CopyComplete
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Negocio\obj\Debug\Negocio.dll
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\Negocio.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\accesoAdatos.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\Clases.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\accesoAdatos.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\Clases.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\obj\Debug\negocio.csproj.AssemblyReference.cache
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\obj\Debug\negocio.csproj.CoreCompileInputs.cache
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\obj\Debug\negocio.csproj.Up2Date
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\obj\Debug\Negocio.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\dominio.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Negocio\bin\Debug\dominio.pdb

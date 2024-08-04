@@ -10,3 +10,9 @@ C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\acces
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\accesoAdatos\obj\Debug\accesoAdatos.csproj.CoreCompileInputs.cache
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\accesoAdatos\obj\Debug\accesoAdatos.dll
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\accesoAdatos\obj\Debug\accesoAdatos.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\accesoAdatos\bin\Debug\accesoAdatos.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\accesoAdatos\bin\Debug\accesoAdatos.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\accesoAdatos\obj\Debug\accesoAdatos.csproj.AssemblyReference.cache
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\accesoAdatos\obj\Debug\accesoAdatos.csproj.CoreCompileInputs.cache
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\accesoAdatos\obj\Debug\accesoAdatos.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\accesoAdatos\obj\Debug\accesoAdatos.pdb

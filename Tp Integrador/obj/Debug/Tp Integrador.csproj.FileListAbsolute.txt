@@ -38,3 +38,22 @@ C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Tp In
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp Integrador.pdb
 C:\Users\Juaniyeppi\Documents\TPFinalNivel2_Dominguez\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp_Integrador.FormVerDetalle.resources
 C:\Users\Yeppi\Documents\TPFinalNivel2_Dominguez\TPFinalNivel2_Dominguez\Tp Integrador\obj\Debug\Tp_Integrador.FormVerDetalle.resources
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\Tp Integrador.exe.config
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\Tp Integrador.exe
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\Tp Integrador.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\Clases.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\Negocio.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\accesoAdatos.dll
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\Clases.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\Negocio.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\bin\Debug\accesoAdatos.pdb
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\tp Integrador.csproj.AssemblyReference.cache
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp_Integrador.frmAgregarModificar.resources
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp_Integrador.FormCatalogo.resources
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp_Integrador.FormVerDetalle.resources
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp_Integrador.Properties.Resources.resources
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\tp Integrador.csproj.GenerateResource.cache
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\tp Integrador.csproj.CoreCompileInputs.cache
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\tp Integ.E108F884.Up2Date
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp Integrador.exe
+C:\Users\Juaniyeppi\Documents\Nivel2MP\TpIntegradorNivel2C-\Tp Integrador\obj\Debug\Tp Integrador.pdb

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using clases;
+using dominio;
 using System.Data.SqlClient;
 using accesoAdatos;
 using System.Net;
@@ -19,7 +19,7 @@ namespace negocio
             List<Articulo> listaDeArticulos = new List<Articulo>();
 
 
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
 
             try
             {
@@ -46,7 +46,7 @@ namespace negocio
 
         public void agregar(Articulo nuevo) //recibe el artículo que se manda dentro del evento Aceptar_Click desde el formulario AgregarModificar
         {
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
 
             try
             {
@@ -78,7 +78,7 @@ namespace negocio
 
         public void modificar(Articulo articuloAModificar)
         {
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
 
             try
             {
@@ -112,7 +112,7 @@ namespace negocio
 
         public void EliminarFisico(int id)
         {
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
             try
             {
                 datos.SetearConsulta("delete from ARTICULOS where Id = @Id");
@@ -131,7 +131,7 @@ namespace negocio
 
         public void EliminarLogico(int id)
         {
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
             try
             {
                 datos.SetearConsulta("update ARTICULOS set Activo = 0 where id = @id");
@@ -149,7 +149,7 @@ namespace negocio
         }
         public void Activar(int id)
         {
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
 
             try
             {
@@ -171,7 +171,7 @@ namespace negocio
         public List<Articulo> ListarInactivos()
         {
 
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
 
             try
             {
@@ -198,7 +198,7 @@ namespace negocio
 
         public List<Articulo> filtrarAvanzado(string campo, string criterio, string filtro)
         {
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
             try
             {
                 string consulta = "select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca,A.IdCategoria,A.ImagenUrl,A.Precio,C.Id as 'IdCategoria',C.Descripcion as 'DescripcionCategoria',M.Id as 'IdMarca',M.Descripcion as 'DescripcionMarca', A.Activo from ARTICULOS A, CATEGORIAS C, MARCAS M where IdMarca = M.Id AND IdCategoria = C.Id AND A.Activo = 1 AND ";
@@ -292,7 +292,7 @@ namespace negocio
             }
         }
 
-        private List<Articulo> CargarLista(ConexionDatos datos)
+        private List<Articulo> CargarLista(AccesoADatos datos)
         {
             List<Articulo> lista = new List<Articulo>();
             while (datos.Lector.Read())

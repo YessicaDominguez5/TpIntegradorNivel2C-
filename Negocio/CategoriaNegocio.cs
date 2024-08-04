@@ -13,7 +13,7 @@ namespace Negocio
         public List<Categoria> listar()
         {
             List<Categoria> listadeCategorias= new List<Categoria>();
-            ConexionDatos datos = new ConexionDatos();
+            AccesoADatos datos = new AccesoADatos();
 
             try
             {
